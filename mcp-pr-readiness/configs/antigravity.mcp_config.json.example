@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "github": {
+      "serverUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": { "Authorization": "Bearer YOUR_GITHUB_PAT" }
+    },
+    "pr-readiness": {
+      "command": "/absolute/path/to/mcp-pr-readiness/bin/prready-server",
+      "args": ["--config", "/absolute/path/to/.prready.json"]
+    }
+  }
+}

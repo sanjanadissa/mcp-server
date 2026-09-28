@@ -1,0 +1,22 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "github_token",
+      "description": "GitHub personal access token (minimal scopes: repo read)",
+      "password": true
+    }
+  ],
+  "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": { "Authorization": "Bearer ${input:github_token}" }
+    },
+    "pr-readiness": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/bin/prready-server",
+      "args": ["--config", "${workspaceFolder}/.prready.json"]
+    }
+  }
+}
